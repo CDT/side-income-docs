@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>Side income · Documents</title>
+  <meta name="description" content="A private, organized view of side-income planning documents.">
+  <link rel="stylesheet" href="style.css">
+  <script src="encrypted-docs.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="login" id="login-view">
+    <form class="login-card" id="login-form">
+      <div class="brand-mark" aria-hidden="true">S</div>
+      <h1>Side income documents</h1>
+      <p>Sign in to open the document library.</p>
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required autofocus>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <p class="login-error" id="login-error" role="alert" hidden>Incorrect username or password.</p>
+      <button type="submit" id="login-button">Sign in</button>
+    </form>
+  </main>
+  <div class="app-shell" id="app-shell" hidden>
+    <aside class="sidebar" id="sidebar" aria-label="Document navigation">
+      <div class="brand"><span class="brand-mark">S</span><div><strong>Side income</strong><small>Document library</small></div></div>
+      <label class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search documents</span><input id="search" type="search" placeholder="Search documents" autocomplete="off"><kbd>/</kbd></label>
+      <div class="nav-caption">LIBRARY <span id="doc-count"></span></div>
+      <nav id="doc-nav" aria-label="Documents"></nav>
+      <div class="sidebar-foot">Private planning workspace</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button id="menu-toggle" class="menu-toggle" aria-label="Toggle document navigation" aria-expanded="false">☰</button><span class="topbar-label">DOCUMENTS</span><span class="topbar-count" id="topbar-count"></span><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme"></button></header>
+      <div class="main-content" id="main-content">
+        <section class="home" id="home-view"><h1>Documents, in one place.</h1><p class="intro">Plans, outreach drafts, and research gathered into a simple library.</p><div class="section-heading"><h2>Browse the library</h2><span id="browse-count"></span></div><div class="cards" id="cards"></div></section>
+        <section class="reader" id="reader-view" hidden><a href="#" class="back-link">← All documents</a><div class="reader-label" id="reader-group"></div><article id="article"></article><div class="reader-footer"><span id="reader-path"></span><a href="#">Back to library ↑</a></div></section>
+        <section class="empty" id="empty-view" hidden><div class="empty-icon">⌕</div><h2>No documents found</h2><p>Try another title or keyword.</p></section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
